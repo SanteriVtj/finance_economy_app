@@ -16,19 +16,7 @@
                 <option value="mm_rr">Money multiplier (required reserve rate)</option>
                 <option value="mm_c">Money multiplier (currency ratio)</option>
             </select>
-            <div class="chart" id="graph">
-                <div class="loader">
-                    <style>
-                        .loader {
-                            border: 16px solid #f3f3f3; /* Light grey */
-                            border-top: 16px solid #3498db; /* Blue */
-                            border-radius: 50%;
-                            width: 120px;
-                            height: 120px;
-                            animation: spin 2s linear infinite;
-                        }
-                    </style>
-                </div>
+            <div class="loader" id="graph">
                 <script>
                     var graphs = {{plot | safe}};
                     Plotly.plot('graph',graphs,{});
