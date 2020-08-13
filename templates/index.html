@@ -13,20 +13,16 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-xs-3">
-                <label> Models:  </label>
-                <select class="form-control" id ='first_cat'>
-                    <option value="mm_rr">Money multiplier (required reserve rate)</option>
-                    <option value="mm_c">Money multiplier (currency ratio)</option>
-                </select>
-            </div>
-            <div class="col-md-6">
-                <div class="chart" id="bargraph">
-                    <script>
-                        var graphs = {{plot | safe}};
-                        Plotly.plot('bargraph',graphs,{});
-                    </script>
-                </div>
+            <label> Models:  </label>
+            <select class="form-control" id ='first_cat'>
+                <option value="mm_rr">Money multiplier (required reserve rate)</option>
+                <option value="mm_c">Money multiplier (currency ratio)</option>
+            </select>
+            <div class="chart" id="graph">
+                <script>
+                    var graphs = {{plot | safe}};
+                    Plotly.plot('graph',graphs,{});
+                </script>
             </div>
         </div>
     </div>
