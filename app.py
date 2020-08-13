@@ -1,6 +1,5 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, request
 import os
-from flask.wrappers import Request
 from money_mul import *
 import numpy as np
 import pandas as pd
@@ -15,9 +14,9 @@ def index():
     plot = create_plot(feature)
     return render_template('index.html', plot=plot)
 
-@app.route('/graph', methods=['GET', 'POST'])
+@app.route('/graph/', methods=['GET', 'POST'])
 def change_fetures():
-    return create_plot(Request.args['selected'])
+    return create_plot(request.args['selected'])
 
 def create_plot(feature):
     if feature == 'mm_rr':

@@ -1,20 +1,27 @@
-$('select').change(function() {
+$('slider').change(function() {
     alert($('#first_cat').val());
 });
 
-$('select').change(function() {
+$('#first_cat').on('click' ,function() {
     $.ajax({
-            url: "/graph",
+            url: "/graph/",
             type: "GET",
             contentType: 'application/json;charset=UTF-8',
+            beforeSend: function(){
+                $("#loader").show();
+               },
             data: {
                 'selected': document.getElementById('first_cat').value
     
             },
             dataType:"json",
             success: function (data) {
+                console.log(data);
                 Plotly.newPlot(document.getElementById('graph'), data);
             },
-            timeout: 500000
+            timeout: 500000,
+            complete:function(data){
+                $("#loader").hide();
+               }
         });
 });
