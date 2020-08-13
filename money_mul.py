@@ -1,5 +1,7 @@
 import numpy as np
 import plotly.graph_objects as go
+import plotly
+import json
 
 def money_multiplier(c, e, rr):
     return (1 + c) / (rr + e + c)
@@ -48,7 +50,7 @@ def graph_rr():
                       },
                       sliders=slider
                       )
-    return fig
+    return json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
 
 def graph_c():
     x, y = np.linspace(.5, 2, 150), np.linspace(0, 1, 150)
@@ -94,4 +96,4 @@ def graph_c():
                       },
                       sliders=slider
                       )
-    return fig
+    return json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)

@@ -9,7 +9,8 @@ port = int(os.environ.get("PORT", 5000))
 
 @app.route('/')
 def hello_world():
-    return render_template('index.html')
+    plot = graph_rr()
+    return render_template('index.html', plot=plot)
 
 
 if __name__ == '__main__':
