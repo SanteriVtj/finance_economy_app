@@ -7,11 +7,19 @@ $('#first_cat').on('change' ,function() {
                 'selected': document.getElementById('first_cat').value
     
             },
+            beforeSend: function() {
+                document.getElementById('spinner').style.display='block';
+                document.getElementById('graph').style.display='none';
+            },
             dataType:"json",
             success: function (data) {
                 console.log(data);
                 Plotly.newPlot(document.getElementById('graph'), data);
             },
-            timeout: 500000
+            timeout: 500000,
+            complete: function() {
+                document.getElementById('spinner').style.display='none';
+                document.getElementById('graph').style.display='block';
+            }
         });
 });

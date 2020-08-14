@@ -5,6 +5,7 @@
     <title>The Economics of Money, Banking and Financial Markets</title>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+    <link rel='stylesheet' href="static/css/styles.css">
 </head>
 <body>
     <h1> The Economics of Money, Banking and Financial Markets </h1>
@@ -16,7 +17,8 @@
                 <option value="mm_rr">Money multiplier (required reserve rate)</option>
                 <option value="mm_c">Money multiplier (currency ratio)</option>
             </select>
-            <div class="loader" id="graph">
+            <div id='spinner'></div>
+            <div id="graph">
                 <script>
                     var graphs = {{plot | safe}};
                     Plotly.plot('graph',graphs,{});
