@@ -5,6 +5,6 @@ ADD . /project
 RUN apt-get update -y
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
-ENTRYPOINT ["python"]
+# ENTRYPOINT ["python"]
 
-CMD ["app.py"]
+CMD gunicorn wsgi:app --bind 0.0.0.0:$PORT --reload
