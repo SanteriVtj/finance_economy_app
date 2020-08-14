@@ -25,4 +25,4 @@ def create_plot(feature):
         return graph_c()
 
 if __name__ == '__main__':
-    app.run(threaded=True,port=5000)
+    app.run(threaded=True, host='0.0.0.0')
