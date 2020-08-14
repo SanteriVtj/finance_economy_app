@@ -5,7 +5,7 @@ import numpy as np
 import pandas as pd
 
 app = Flask(__name__)
-port = int(os.environ.get("PORT", 5000))
+# port = int(os.environ.get("PORT", 5000))
 
 
 @app.route('/')
@@ -25,4 +25,4 @@ def create_plot(feature):
         return graph_c()
 
 if __name__ == '__main__':
-    app.run(debug=True,host='0.0.0.0',port=port)
+    app.run(threaded=True,port=5000)
