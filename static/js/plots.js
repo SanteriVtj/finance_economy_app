@@ -1,4 +1,4 @@
-$('#first_cat').on('click' ,function() {
+$('#first_cat').on('change' ,function() {
     $.ajax({
             url: "/graph/",
             type: "GET",
