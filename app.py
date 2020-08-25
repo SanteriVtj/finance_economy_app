@@ -20,9 +20,11 @@ def change_fetures():
 
 def create_plot(feature):
     if feature == 'mm_rr':
-        return graph_rr()
+        with open('plots/graph_rr.txt', 'r') as f:
+            return json.load(f)
     elif feature == 'mm_c':
-        return graph_c()
+        with open('plots/graph_c.txt', 'r') as f:
+            return json.load(f)
 
 if __name__ == '__main__':
-    app.run(threaded=True, host='0.0.0.0')
+    app.run(debug=True, threaded=True, host='0.0.0.0')
