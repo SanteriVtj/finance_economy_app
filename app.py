@@ -10,9 +10,22 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    feature = 'mm_rr'
+    feature = 'home.html'
     plot = create_plot(feature)
-    return render_template('index.html', plot=plot)
+    return render_template('index.html', 
+                           content=feature)
+
+@app.route('/graphs')
+def graphs(feature):
+    return 
+
+@app.route('/something')
+def something(feature):
+    pass
+
+@app.route('/home')
+def home(feature):
+    pass
 
 @app.route('/graph/', methods=['GET', 'POST'])
 def change_fetures():

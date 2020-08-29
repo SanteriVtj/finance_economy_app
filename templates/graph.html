@@ -1,0 +1,19 @@
+{% extends "index.html" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <label> Models:  </label>
+        <select class="form-control" id='first_cat'>
+            <option value="mm_rr">Money multiplier (required reserve rate)</option>
+            <option value="mm_c">Money multiplier (currency ratio)</option>
+        </select>
+        <div id='spinner'></div>
+        <div id="graph">
+            <script>
+                var graphs = {{plot | safe}};
+                Plotly.plot('graph',graphs,{});
+            </script>
+        </div>
+    </div>
+</div>
+{% endblock %}

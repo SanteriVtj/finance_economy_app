@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Inheritable template for more "complex" content than only one plotly plot -->
     <meta charset="UTF-8">
     <title>The Economics of Money, Banking and Financial Markets</title>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
@@ -9,6 +8,8 @@
     <link rel='stylesheet' href="static/css/styles.css">
 </head>
 <body>
+    {% include content %}
+    {% block content %}{% endblock %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="{{ url_for('static', filename='js/plots.js') }}"></script>
 </body>

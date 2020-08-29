@@ -13,24 +13,6 @@
         <a href="#graphs">Graphs</a>
         <a href="#else">Something</a>
     </div>
-    <h1> The Economics of Money, Banking and Financial Markets </h1>
-
-    <div class="container">
-        <div class="row">
-            <label> Models:  </label>
-            <select class="form-control" id='first_cat'>
-                <option value="mm_rr">Money multiplier (required reserve rate)</option>
-                <option value="mm_c">Money multiplier (currency ratio)</option>
-            </select>
-            <div id='spinner'></div>
-            <div id="graph">
-                <script>
-                    var graphs = {{plot | safe}};
-                    Plotly.plot('graph',graphs,{});
-                </script>
-            </div>
-        </div>
-    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="{{ url_for('static', filename='js/plots.js') }}"></script>
 </body>
