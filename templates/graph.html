@@ -10,7 +10,7 @@
         <div id='spinner'></div>
         <div id="graph">
             <script>
-                var graphs = {{plot | safe}};
+                var graphs = {{ args.plot | safe }};
                 Plotly.plot('graph',graphs,{});
             </script>
         </div>

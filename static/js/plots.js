@@ -1,3 +1,19 @@
+$('#first_cat').on('click' ,function() {
+    $.ajax({
+            url: "/route/",
+            type: "GET",
+            contentType: 'application/json;charset=UTF-8',
+            data: {
+                'site': document.getElementsByClassName('navbar').value
+    
+            },
+            dataType:"json",
+            success: function (data) {
+                Plotly.newPlot(document.getElementsByClassName('navbar'), data);
+            }
+        });
+});
+
 $('#first_cat').on('change' ,function() {
     $.ajax({
             url: "/graph/",
@@ -13,7 +29,6 @@ $('#first_cat').on('change' ,function() {
             },
             dataType:"json",
             success: function (data) {
-                console.log(data);
                 Plotly.newPlot(document.getElementById('graph'), data);
             },
             timeout: 500000,
